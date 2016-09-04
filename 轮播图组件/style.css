@@ -1,0 +1,7 @@
+.imgBox{
+	overflow: hidden;
+	position: relative;
+}
+.imgList{
+	position: absolute;
+}
