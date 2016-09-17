@@ -9,7 +9,8 @@ require.config({
 })
 require(['jquery','windows'],function($,w){
 	$('#a').click(function(){
-		new w.Windows().alert({
+		var win = new w.Windows();
+		win.alert({
 			width:300,
 			height: 100,
 			y: 200,
@@ -21,13 +22,12 @@ require(['jquery','windows'],function($,w){
 			text4AlertBt: 'haha',
 			hasMask: true,
 			isDraggable: true,
-			dragHandle: ".window_header",
-			handler4CloseBt: function(){
-				console.log("you close the button");
-			},
-			handler4AlertBt: function(){
-						console.log("You click the button");
-					}
+			dragHandle: ".window_header"
 		});
+		win.on("close",function(){console.log("you close the button");})
+		win.on("alert",function(){console.log("You click the button");})
+		win.on("alert",function(){console.log("the second alert handler")});
+		win.on("alert",function(){console.log("the first alert handler")});
+		win.on("close",function(){console.log("the second close handler")});
 	});
 })

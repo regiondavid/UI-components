@@ -13,9 +13,24 @@ define(['jquery','jqueryUI'],function($,$UI){
 			isDraggable: true,
 			dragHandle: null,
 			text4AlertBt: '确定'
-		}
+		};
+		this.handlers = {};
 	};
 	Windows.prototype = {
+		on: function(type,handler){
+			if (typeof this.handlers[type] == "undefined") {
+				this.handlers[type] = [];
+			}
+			this.handlers[type].push(handler);
+		},
+		fire: function(type,data){
+			if (this.handlers[type] instanceof Array) {
+				var handlers = this.handlers[type];
+				for(var i=0,len=handlers.length;i<len;i++){
+					handlers[i](data);
+				}
+			}
+		},
 		alert: function(cfg){
 			var CFG = $.extend(this.cfg,cfg);
 			var alertTitle = $('<h2 class="h2-title"></h2>')
@@ -26,9 +41,10 @@ define(['jquery','jqueryUI'],function($,$UI){
 								'</div>');
 			boundingBox.appendTo('body');
 				$('.window_footer').click(function() {
-				CFG.handler4AlertBt && cfg.handler4AlertBt();
+				// CFG.handler4AlertBt && cfg.handler4AlertBt();
 				boundingBox.remove();
 				mask && mask.remove();
+				that.fire("alert");
 			});
 			boundingBox.css({
 				width: CFG.width + 'px',
@@ -37,13 +53,15 @@ define(['jquery','jqueryUI'],function($,$UI){
 				top: (CFG.y || (window.innerHeight - CFG.height)/2) + 'px'
 			});
 			var mask = null;
+			that = this
 			if(CFG.hasCloseBt){
 				var closeButton = $('<span class="window_closeBt">X</span>');
 				closeButton.appendTo(boundingBox);
 				closeButton.click(function(){
-					CFG.handler4CloseBt && CFG.handler4CloseBt();
+					// CFG.handler4CloseBt && CFG.handler4CloseBt();
 					boundingBox.remove();
 					mask && mask.remove();
+					that.fire("close");
 				});
 			}
 			if(CFG.skinClassName){
@@ -60,9 +78,16 @@ define(['jquery','jqueryUI'],function($,$UI){
 					boundingBox.draggable();
 				}
 			}
+			if(CFG.handler4AlertBt){
+				this.on("alert",CFG.handler4AlertBt);
+			}
+			if(CFG.handler4CloseBt){
+				this.on("close",CFG.handler4CloseBt);
+			}
 		},
 		confirm: function(){},
 		prompt: function(){}
+		
 	}		
 	return {Windows: Windows};
 })
