@@ -1,4 +1,4 @@
-define(['jquery'],function($){
+define(['jquery','jqueryUI'],function($,$UI){
 	function Windows(){
 		this.cfg = {
 			width: 500,
@@ -10,6 +10,8 @@ define(['jquery'],function($){
 			handler4AlertBt: null,
 			handler4CloseBt: null,
 			hasMask: false,
+			isDraggable: true,
+			dragHandle: null,
 			text4AlertBt: '确定'
 		}
 	};
@@ -50,6 +52,13 @@ define(['jquery'],function($){
 			if(CFG.hasMask){
 				mask = $('<div class="mask"></div>');
 				mask.appendTo('body');
+			}
+			if(CFG.isDraggable){
+				if(CFG.dragHandle){
+					boundingBox.draggable({handle: CFG.dragHandle});
+				} else {
+					boundingBox.draggable();
+				}
 			}
 		},
 		confirm: function(){},

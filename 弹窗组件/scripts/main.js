@@ -4,7 +4,7 @@
 require.config({
 	paths: {
 		jquery: 'jquery-2.2.2.min',
-		jqueryUI: 'http://code.jquery.com/ui/1.10.4/jquery-ui'
+		jqueryUI: 'jquery-ui.min'
 	}
 })
 require(['jquery','windows'],function($,w){
@@ -20,6 +20,8 @@ require(['jquery','windows'],function($,w){
 			skinClassName: 'windows_skin_a',
 			text4AlertBt: 'haha',
 			hasMask: true,
+			isDraggable: true,
+			dragHandle: ".window_header",
 			handler4CloseBt: function(){
 				console.log("you close the button");
 			},
