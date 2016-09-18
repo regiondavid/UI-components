@@ -23,9 +23,8 @@ require(['jquery','windows'],function($,w){
 			hasMask: true,
 			isDraggable: true,
 			dragHandle: ".window_header"
-		});
-		win.on("close",function(){console.log("you close the button");})
-		win.on("alert",function(){console.log("You click the button");})
+		}).on("alert",function(){console.log("You click the button");
+		}).on("close",function(){console.log("you close the button");})
 		win.on("alert",function(){console.log("the second alert handler")});
 		win.on("alert",function(){console.log("the first alert handler")});
 		win.on("close",function(){console.log("the second close handler")});

@@ -1,4 +1,4 @@
-define(['jquery','jqueryUI'],function($,$UI){
+define(['widget','jquery','jqueryUI'],function(widget,$,$UI){
 	function Windows(){
 		this.cfg = {
 			width: 500,
@@ -16,21 +16,7 @@ define(['jquery','jqueryUI'],function($,$UI){
 		};
 		this.handlers = {};
 	};
-	Windows.prototype = {
-		on: function(type,handler){
-			if (typeof this.handlers[type] == "undefined") {
-				this.handlers[type] = [];
-			}
-			this.handlers[type].push(handler);
-		},
-		fire: function(type,data){
-			if (this.handlers[type] instanceof Array) {
-				var handlers = this.handlers[type];
-				for(var i=0,len=handlers.length;i<len;i++){
-					handlers[i](data);
-				}
-			}
-		},
+	Windows.prototype = $.extend({},new widget.Widget(),{
 		alert: function(cfg){
 			var CFG = $.extend(this.cfg,cfg);
 			var alertTitle = $('<h2 class="h2-title"></h2>')
@@ -84,10 +70,11 @@ define(['jquery','jqueryUI'],function($,$UI){
 			if(CFG.handler4CloseBt){
 				this.on("close",CFG.handler4CloseBt);
 			}
+			return this;
 		},
 		confirm: function(){},
 		prompt: function(){}
 		
-	}		
+	});		
 	return {Windows: Windows};
 })
