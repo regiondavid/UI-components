@@ -13,13 +13,11 @@ require(['jquery','windows'],function($,w){
 		win.alert({
 			width:300,
 			height: 100,
-			y: 200,
-			x: 100,
-			title: '这是标题',
-			content: 'hahaha',
+			title: '没想好名字的标题',
+			content: 'Are U Sure?',
 			hasCloseBt: true,
 			skinClassName: 'windows_skin_a',
-			text4AlertBt: 'haha',
+			text4AlertBt: 'YES!',
 			hasMask: true,
 			isDraggable: true,
 			dragHandle: ".window_header"

@@ -23,7 +23,7 @@ define(['widget','jquery','jqueryUI'],function(widget,$,$UI){
 			var boundingBox = $('<div class="windows_boundingBox">'+
 									'<div class="window_header">'+CFG.title+'</div>'+
 									'<div class="window_body">'+CFG.content+'</div>'+
-									'<div class="window_footer"><input type="button" value="'+CFG.text4AlertBt+'"></div>'+
+									'<div class="window_footer"><input type="button" class="am-btn-success" value="'+CFG.text4AlertBt+'"></div>'+
 								'</div>');
 			boundingBox.appendTo('body');
 				$('.window_footer').click(function() {
