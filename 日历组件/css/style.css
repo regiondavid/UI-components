@@ -1,0 +1,12 @@
+select {
+	width: 100px;
+	font-size: 20px;
+	margin-right: 50px;
+}
+.days {
+	width: 300px;
+	line-height: 20px;
+}
+button {
+	margin-left: 50px;
+}
