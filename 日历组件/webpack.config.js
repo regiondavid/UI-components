@@ -1,10 +1,10 @@
 var PATH = require('path');
 var ROOT_PATH = PATH.resolve(__dirname);
-var APP_PATH =  PATH.resolve(ROOT_PATH,'js');
+var APP_PATH =  PATH.resolve(ROOT_PATH,'docs/js');
 var BUILD_PATH = PATH.resolve(ROOT_PATH,'dist');
 
 module.exports = {
-	entry: "./js/app.js",
+	entry: "./docs/js/app.js",
 	output: {
 		path: BUILD_PATH,
 		filename: "boundle.js"

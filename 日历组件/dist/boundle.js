@@ -70,6 +70,9 @@
 		for (var h = 0; h < td.length - index2 - index1; h++) {
 			td[td.length - h - 1].className = "nextMonth am-disabled";
 		}
+		td[index1 + _Now.Now.day - 1].className = "selected am-success";
+		chooseY.selectedIndex = 2016 - _Now.Now.year;
+		chooseM.selectedIndex = _Now.Now.month - 1;
 		chooseY.onchange = function () {
 			var uesrYear = parseInt(chooseY.value);
 			var uesrMonth = parseInt(chooseM.value);
@@ -87,6 +90,7 @@
 			for (var _h = 0; _h < td.length - index2 - index1; _h++) {
 				td[td.length - _h - 1].className = "nextMonth am-disabled";
 			}
+			// td[index1+Now.day-1].className="selected am-success";
 			createClass();
 		};
 		chooseM.onchange = function () {
@@ -106,6 +110,7 @@
 			for (var _h2 = 0; _h2 < td.length - index2 - index1; _h2++) {
 				td[td.length - _h2 - 1].className = "nextMonth am-disabled";
 			}
+			// td[index1+Now.day-1].className="selected am-success";
 			createClass();
 		};
 		var bt = document.getElementsByTagName("button");
@@ -365,8 +370,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./style.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./style.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./style.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./style.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});

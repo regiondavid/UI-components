@@ -21,6 +21,9 @@ document.getElementById("getDate").onclick =function(){
 	for(let h=0;h<td.length-index2-index1;h++){
 		td[td.length-h-1].className="nextMonth am-disabled";
 	}
+	td[index1+Now.day-1].className="selected am-success";
+	chooseY.selectedIndex = 2016-Now.year;
+	chooseM.selectedIndex = Now.month-1;
 	chooseY.onchange = function(){
 		var uesrYear = parseInt(chooseY.value);
 		var uesrMonth = parseInt(chooseM.value);
@@ -38,6 +41,7 @@ document.getElementById("getDate").onclick =function(){
 		for(let h=0;h<td.length-index2-index1;h++){
 			td[td.length-h-1].className="nextMonth am-disabled";
 		}
+		// td[index1+Now.day-1].className="selected am-success";
 		createClass();
 	}
 	chooseM.onchange = function(){
@@ -57,6 +61,7 @@ document.getElementById("getDate").onclick =function(){
 		for(let h=0;h<td.length-index2-index1;h++){
 			td[td.length-h-1].className="nextMonth am-disabled";
 		}
+		// td[index1+Now.day-1].className="selected am-success";
 		createClass();
 	}
 	var bt = document.getElementsByTagName("button");
