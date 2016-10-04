@@ -8,5 +8,5 @@ dist: webpack打包后的文件
 
 js/css: 项目源码
 
-
+### [线上预览地址](https://regiondavid.github.io/docs/index.html)
 ### 开源协议：[MIT](http://choosealicense.com/licenses/mit/#)
