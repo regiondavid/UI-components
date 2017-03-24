@@ -10,7 +10,7 @@ window.onload = function() {
   //   console.log("up");
   // }
   test1.ontouchmove = function(event) {
-    console.log(event.clientX)
+    alert(event.clientX)
     console.log(2);
   }
 }
