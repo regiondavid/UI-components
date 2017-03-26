@@ -1,10 +1,31 @@
-#test1 {
-  width: 300px;
-  height: 200px;
-  background-color: dodgerblue;
+* {
+  padding: 0 0;
+  margin: 0 0;
 }
-#test2 {
-  width: 300px;
-  height: 200px;
-  background-color: orangered;
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #d3d3d3;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 350px;
+  height: 350px;
+  align-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: space-between;
+}
+
+.item {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ff8c00;
 }
