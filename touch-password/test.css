@@ -9,6 +9,13 @@
   background-color: #d3d3d3;
 }
 
+.header {
+  line-height: 60px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #dcdcdc;
+}
+
 .box {
   display: flex;
   flex-wrap: wrap;
@@ -40,4 +47,24 @@ canvas {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.info-text {
+  text-align: center;
+}
+
+.select {
+  position: absolute;
+  z-index: 999;
+  bottom: 50px;
+  left: 100px;
+}
+.select label {
+  font-size: 20px;
+  line-height: 30px;
+  margin-left: 10px;
+}
+.select input {
+  width: 20px;
+  height: 20px;
 }
