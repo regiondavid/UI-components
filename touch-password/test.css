@@ -12,8 +12,8 @@
 .box {
   display: flex;
   flex-wrap: wrap;
-  width: 350px;
-  height: 350px;
+  width: 320px;
+  height: 320px;
   align-content: space-between;
   margin: auto;
 }
@@ -29,7 +29,15 @@
   height: 80px;
   border-radius: 50%;
   background-color: #fff;
+  border: 1px solid #3d444f;
 }
 .checked {
   background-color: #ff8c00;
+  border: 1px solid #ff4500;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
