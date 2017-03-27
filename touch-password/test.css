@@ -15,6 +15,7 @@
   width: 350px;
   height: 350px;
   align-content: space-between;
+  margin: auto;
 }
 
 .column {
@@ -27,5 +28,8 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  background-color: #fff;
+}
+.checked {
   background-color: #ff8c00;
 }
