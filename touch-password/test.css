@@ -3,6 +3,13 @@
   margin: 0 0;
 }
 
+.no-scroll, .no-scroll body {
+  overflow: hidden;
+}
+.no-scroll body {
+  position: relative;
+}
+
 .container {
   width: 100vw;
   height: 100vh;
