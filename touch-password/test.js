@@ -59,6 +59,7 @@ window.onload = function() {
     broadcast.listen(item.change);
   })
   document.getElementsByClassName("container")[0].addEventListener('touchmove', function(e) {
+    e.preventDefault();
     movePoint.x = e.touches[0].clientX;
     movePoint.y = e.touches[0].clientY;
     broadcast.trigger(movePoint);
@@ -66,7 +67,7 @@ window.onload = function() {
 
   document.getElementsByClassName("container")[0].addEventListener('touchend', function(e) {
     if(mode == "设置密码") {
-      if(psd.length < 5) {
+      if(psd.length < 5 && testpsd.length == 0) {
         info.innerText = "密码太短，至少需要5个点";
         init();
       } else {
@@ -83,6 +84,7 @@ window.onload = function() {
           } else {
             info.innerText = "两次输入的不一致";
             init();
+            testpsd = [];
           }
         }
       }
