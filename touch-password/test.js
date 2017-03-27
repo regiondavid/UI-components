@@ -64,8 +64,8 @@ window.onload = function() {
     movePoint.y = e.touches[0].clientY;
     broadcast.trigger(movePoint);
   }, false);
-
   document.getElementsByClassName("container")[0].addEventListener('touchend', function(e) {
+    e.preventDefault();
     if(mode == "设置密码") {
       if(psd.length < 5 && testpsd.length == 0) {
         info.innerText = "密码太短，至少需要5个点";
