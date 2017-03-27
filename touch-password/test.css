@@ -3,10 +3,21 @@
   margin: 0 0;
 }
 
+.no-scroll, .no-scroll body {
+  overflow: hidden;
+}
+.no-scroll body {
+  position: relative;
+}
+
 .container {
   width: 100vw;
   height: 100vh;
-  background-color: #d3d3d3;
+  background:#d3d3d3;
+  background-image:
+      linear-gradient(#d3d3d3 14px,transparent 0),
+      linear-gradient(90deg,white 1px,transparent 0);
+  background-size:15px 15px,15px 15px;
 }
 
 .header {
@@ -14,6 +25,8 @@
   font-size: 20px;
   text-align: center;
   background-color: #dcdcdc;
+  border-bottom: 1px solid #696969;
+  margin-bottom: 10px;
 }
 
 .box {
@@ -50,6 +63,7 @@ canvas {
 }
 
 .info-text {
+  margin-top: 20px;
   text-align: center;
 }
 
