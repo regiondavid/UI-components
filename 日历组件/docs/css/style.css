@@ -1,7 +1,109 @@
+
+.am-table{
+	max-width: 100%;
+	background-color: transparent;
+	empty-cells: show;
+	border: 1px solid #ddd;
+	border-left: none;
+	width: 100%;
+	margin-bottom: 1.6rem;
+	border-spacing: 0;
+	border-collapse: separate;
+}
+.am-table th {
+    text-align: left;
+}
+.am-table td, .am-table th {
+    padding: 0;
+}
+.am-table>tbody>tr>td, .am-table>tbody>tr>th, .am-table>tfoot>tr>td, .am-table>tfoot>tr>th, .am-table>thead>tr>td, .am-table>thead>tr>th {
+	padding: .7rem;
+	line-height: 1.6;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+.am-table-bordered>tbody>tr>td, .am-table-bordered>tbody>tr>th, .am-table-bordered>tfoot>tr>td, .am-table-bordered>tfoot>tr>th, .am-table-bordered>thead>tr>td, .am-table-bordered>thead>tr>th {
+	border-left: 1px solid #ddd;
+}
+.am-table-centered>tbody>tr>td, .am-table-centered>tbody>tr>th, .am-table-centered>tfoot>tr>td, .am-table-centered>tfoot>tr>th, .am-table-centered>thead>tr>td, .am-table-centered>thead>tr>th {
+	text-align: center;
+}
+.am-table-bordered>tbody>tr:first-child>td, .am-table-bordered>tbody>tr:first-child>th {
+	border-top: none;
+}
+.am-table>tbody>tr.am-primary>td, .am-table>tbody>tr.am-primary>th, .am-table>tbody>tr>td.am-primary, .am-table>tbody>tr>th.am-primary, .am-table>tfoot>tr.am-primary>td, .am-table>tfoot>tr.am-primary>th, .am-table>tfoot>tr>td.am-primary, .am-table>tfoot>tr>th.am-primary, .am-table>thead>tr.am-primary>td, .am-table>thead>tr.am-primary>th, .am-table>thead>tr>td.am-primary, .am-table>thead>tr>th.am-primary {
+	color: #0b76ac;
+  background-color: rgba(14,144,210,.115);
+}
+.am-table>tbody>tr.am-disabled>td, .am-table>tbody>tr.am-disabled>th, .am-table>tbody>tr>td.am-disabled, .am-table>tbody>tr>th.am-disabled, .am-table>tfoot>tr.am-disabled>td, .am-table>tfoot>tr.am-disabled>th, .am-table>tfoot>tr>td.am-disabled, .am-table>tfoot>tr>th.am-disabled, .am-table>thead>tr.am-disabled>td, .am-table>thead>tr.am-disabled>th, .am-table>thead>tr>td.am-disabled, .am-table>thead>tr>th.am-disabled {
+    color: #999;
+}
+.am-table>tbody>tr.am-success>td, .am-table>tbody>tr.am-success>th, .am-table>tbody>tr>td.am-success, .am-table>tbody>tr>th.am-success, .am-table>tfoot>tr.am-success>td, .am-table>tfoot>tr.am-success>th, .am-table>tfoot>tr>td.am-success, .am-table>tfoot>tr>th.am-success, .am-table>thead>tr.am-success>td, .am-table>thead>tr.am-success>th, .am-table>thead>tr>td.am-success, .am-table>thead>tr>th.am-success {
+	color: #5eb95e;
+	background-color: rgba(94,185,94,.115);
+}
+
+.am-btn {
+	display: inline-block;
+	margin-bottom: 0;
+	padding: .5em 1em;
+	vertical-align: middle;
+	font-weight: 400;
+	line-height: 1.2;
+	text-align: center;
+	white-space: nowrap;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 0;
+	cursor: pointer;
+	outline: 0;
+	-webkit-appearance: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-transition: background-color .3s ease-out,border-color .3s ease-out;
+	transition: background-color .3s ease-out,border-color .3s ease-out;
+}
+.am-btn.am-radius {
+    border-radius: 2px;
+}
+
+.am-radius {
+    border-radius: 2px;
+}
+.am-btn-default {
+    color: #444;
+    background-color: #e6e6e6;
+    border-color: #e6e6e6;
+}
+.am-btn-success {
+    color: #fff;
+    background-color: #5eb95e;
+    border-color: #5eb95e;
+}
+.am-btn-success:focus, .am-btn-success:hover {
+    background-color: #4aaa4a;
+}
+.am-btn-success.am-active, .am-btn-success:active, .am-btn-success:focus, .am-btn-success:hover, .am-dropdown.am-active .am-btn-success.am-dropdown-toggle {
+    color: #fff;
+    border-color: #429842;
+}
+.am-btn-default:focus, .am-btn-default:hover {
+    background-color: #d4d4d4;
+}
+.am-btn-default.am-active, .am-btn-default:active, .am-btn-default:focus, .am-btn-default:hover, .am-dropdown.am-active .am-btn-default.am-dropdown-toggle {
+    color: #444;
+    border-color: #c7c7c7;
+}
+
 select {
 	width: 100px;
 	font-size: 20px;
 	margin-right: 50px;
+	vertical-align: middle;
+	text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 .days {
 	width: 300px;
@@ -9,4 +111,5 @@ select {
 }
 button {
 	margin-left: 50px;
+	font-size: 20px;
 }

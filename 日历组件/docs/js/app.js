@@ -1,8 +1,10 @@
 import {Now} from "./Now";
 import {calendar,getAllMonth} from "./main";
 require("../css/style.css")
-// require("../node_modules/amazeui/dist/css/amazeui.min.css")
-document.getElementById("getDate").onclick =function(){
+var getDateInput = document.getElementsByClassName("getDate");
+[].forEach.call(getDateInput, function(ele) {
+	ele.addEventListener('click', 
+	function(){
 	if(document.getElementById("calendar")){
 		removeAll();
 	}
@@ -22,12 +24,11 @@ document.getElementById("getDate").onclick =function(){
 		td[td.length-h-1].className="nextMonth am-disabled";
 	}
 	td[index1+Now.day-1].className="selected am-success";
-	chooseY.selectedIndex = 2016-Now.year;
+	chooseY.selectedIndex = 2025-Now.year;
 	chooseM.selectedIndex = Now.month-1;
 	chooseY.onchange = function(){
 		var uesrYear = parseInt(chooseY.value);
 		var uesrMonth = parseInt(chooseM.value);
-		// console.log(Now);
 		calendar.removeDom(calendar.countTr(Now));
 		Now.year = uesrYear;
 		Now.month = uesrMonth;
@@ -41,13 +42,11 @@ document.getElementById("getDate").onclick =function(){
 		for(let h=0;h<td.length-index2-index1;h++){
 			td[td.length-h-1].className="nextMonth am-disabled";
 		}
-		// td[index1+Now.day-1].className="selected am-success";
 		createClass();
 	}
 	chooseM.onchange = function(){
 		var uesrYear = parseInt(chooseY.value);
 		var uesrMonth = parseInt(chooseM.value);
-		// console.log(Now);
 		calendar.removeDom(calendar.countTr(Now));
 		Now.year = uesrYear;
 		Now.month = uesrMonth;
@@ -61,22 +60,21 @@ document.getElementById("getDate").onclick =function(){
 		for(let h=0;h<td.length-index2-index1;h++){
 			td[td.length-h-1].className="nextMonth am-disabled";
 		}
-		// td[index1+Now.day-1].className="selected am-success";
 		createClass();
 	}
 	var bt = document.getElementsByTagName("button");
 	createClass();
 	bt[0].onclick = function(){
 		if(!document.querySelector(".selected")){
-			document.getElementById("getDate").value = Now.year+"-"+Now.month+"-"+Now.day;
+			ele.value = Now.year+"-"+Now.month+"-"+Now.day;
 		}else {
-			document.getElementById("getDate").value = Now.year+"-"+Now.month+"-"+document.querySelector(".selected").innerText;
-			// console.log("selected");
+			ele.value = Now.year+"-"+Now.month+"-"+document.querySelector(".selected").innerText;
 		}	
 		removeAll();
 	}
 	bt[1].onclick = removeAll;
-} 
+}, false);
+});
 function renderTable(){
 	var table = document.createElement("table");
 	var tbody = document.createElement("tbody");
@@ -112,9 +110,9 @@ function renderTable(){
 	bt2.setAttribute("class","chooseBt am-btn am-btn-default am-radius");
 	bt1.innerText = "确定";
 	bt2.innerText = "取消";
-	for(var a=0;a<15;a++){
+	for(var a=0;a<25;a++){
 		var option1 = document.createElement("option");
-		option1.innerText = 2016-a;
+		option1.innerText = 2025-a;
 		select1.appendChild(option1);
 	}
 	for(var b=0;b<12;b++){

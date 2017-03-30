@@ -1,5 +1,4 @@
 import {Now} from "./Now.js";
-// console.log(Now);
 function Render(){
 	Render.prototype.countTr = countTr;
 	Render.prototype.renderDom = renderDom;
@@ -8,7 +7,6 @@ function Render(){
 function renderDom(){
 	var _self = this;
 	var tdList = _self.countTr(Now);
-	// console.log(tdList);
 	tdList.forEach(function(ele){
 		createTr(ele);
 	})
@@ -28,7 +26,6 @@ function countTr(date){
 	var last = new Date(date.year,date.month,0);
 	var lastDay = last.getDay();
 	var monthDay = getAllMonth(date.month);
-	// console.log(date.month + "ddd"+monthDay);
 	var preMonth = getAllMonth(date.month-1);
 	var nextMonth = getAllMonth(date.month+1);
 	var dayArray = [];
@@ -37,8 +34,6 @@ function countTr(date){
 	for(var i=0;i<monthDay;i++){
 		dayArray.push(i+1);
 	}
-	// console.log(dayArray);
-	//create first line
 	var array1 = dayArray.splice(0,7-firstDay);
 	if(firstDay){
 		for(var k=0;k<firstDay;k++){
@@ -57,7 +52,6 @@ function countTr(date){
 	}
 	tdArray.push(dayArray);
 	return tdArray;
-	// console.log(tdArray);
 }
 function createTr(array){
 	var tr = document.createElement("tr");
@@ -71,9 +65,7 @@ function createTr(array){
 }
 function removeDom(array){
 	for(let a=0;a<array.length;a++){	
-		// document.getElementById("calendarTable").getElementsByTagName("tbody")[0].removeChild(document.getElementById("calendarTable").getElementsByTagName("tbody")[0].lastChild);
 		document.getElementById("calendarTable").getElementsByTagName("tbody")[0].removeChild(document.getElementsByClassName("daysItems")[0]);
-		// console.log(a);
 	}
 }
 var calendar = new Render();
