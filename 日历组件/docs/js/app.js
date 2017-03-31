@@ -135,10 +135,10 @@ function renderTable(){
 	calendarBox.appendChild(table);
 	calendarBox.appendChild(bt1);
 	calendarBox.appendChild(bt2);
-	document.body.appendChild(calendarBox);
+	document.getElementsByClassName("getDate")[0].parentNode.appendChild(calendarBox);
 }
 function removeAll(){
-	document.body.removeChild(document.getElementById("calendar"));
+	document.getElementsByClassName("getDate")[0].parentNode.removeChild(document.getElementById("calendar"));
 }
 function createClass(){
 	var td = document.getElementsByTagName("td");
