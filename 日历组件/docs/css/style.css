@@ -1,6 +1,7 @@
 #calendar {
 	position: absolute;
 	z-index: 999;
+	background-color: #fff;
 }
 .am-table{
 	max-width: 100%;

@@ -62,7 +62,7 @@ var getDateInput = document.getElementsByClassName("getDate");
 		}
 		createClass();
 	}
-	var bt = document.getElementsByTagName("button");
+	var bt = document.getElementsByClassName("chooseBt");
 	createClass();
 	bt[0].onclick = function(){
 		if(!document.querySelector(".selected")){
